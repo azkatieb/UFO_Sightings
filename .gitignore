@@ -3,6 +3,24 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# csv files for project
+nuforc_reports.csv
+az_city_ufo.csv
+ufo_data_az_df.csv
+ufo_data_cleaned4.csv
+ufo_population_az_df.csv
+Clean_City_PopulationGrowth.csv
+ufo_population_az_df.csv
+ufo_data_az_df.csv
+ufo_data_cleaned4.csv
+config.py
+AZ_City_Fixed.xlsx
+az_city_ufo.csv
+AZ_CityGrowth_YoY.csv
+Merge_Datasets.ipynb
+Research_UFO.ipynb
+ufo_data_az_df.csv
+ufo_data_cleaned4.csv
 # C extensions
 *.so
 
@@ -127,3 +145,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+nuforc_reports.csv
+ufo_data_cleaned4.csv
