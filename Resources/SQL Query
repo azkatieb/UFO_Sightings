@@ -1,0 +1,64 @@
+--Creating table for UFO raw data file
+CREATE TABLE ufos_rawtable1 (
+	index INT NOT Null,
+	summary VARCHAR, 
+	city VARCHAR, 
+	state VARCHAR,
+	shape VARCHAR,
+	duration VARCHAR, 
+	stats VARCHAR,
+	text VARCHAR, 
+	posted TIMESTAMP,
+	city_latitude VARCHAR,
+	city_longitude VARCHAR,
+	date_str DATE,
+	time_str TIME,
+	PRIMARY KEY (index)
+);
+
+--Create table with clean city names
+CREATE TABLE city_names (
+	city_raw VARCHAR,
+	city_corrected VARCHAR
+);
+
+--Create City Population YOY
+CREATE TABLE city_population_yoy (
+	City VARCHAR,
+	State VARCHAR,
+	YEAR VARCHAR,
+	POPULATION VARCHAR,
+	DATE DATE
+);
+
+SELECT * FROM ufos_rawtable1
+
+SELECT * FROM city_names
+
+SELECT * FROM city_population_yoy
+
+SELECT * FROM ufo_az_clean1
+
+SELECT city, year, population
+INTO clean_population
+FROM city_population_yoy
+
+
+--joining clean_population and ufo_az_clean1
+SELECT uf.date_time,
+	uf.summary,
+    uf.city,
+	uf.state,
+	uf.shape,
+	uf.duration, 
+	uf.year,
+    cp.population
+INTO ufo_population
+FROM ufo_az_clean1 as uf
+INNER JOIN clean_population as cp
+	ON (uf.city = cp.city) AND (uf.year = cp.year);
+
+
+SELECT * FROM ufo_population
+
+	
